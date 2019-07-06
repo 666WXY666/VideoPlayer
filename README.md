@@ -1,2 +1,2 @@
 # Chapter
-第六讲 Android多媒体基础
+第7讲 Android多媒体基础
