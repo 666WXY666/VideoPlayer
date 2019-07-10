@@ -3,7 +3,6 @@ package com.domker.study.androidstudy;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
@@ -76,7 +75,7 @@ public class ImageActivity extends AppCompatActivity {
     private void openSystemCamera() {
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         String imageName = String.format(Locale.getDefault(), "img_%d.jpg", System.currentTimeMillis());
-        imagePath = new File(Environment.getExternalStorageDirectory(), imageName);
+        imagePath = new File(getExternalFilesDir(""), imageName);
         Uri outUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", imagePath);
         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outUri);
         startActivityForResult(cameraIntent, REQUEST_CAMERA);
