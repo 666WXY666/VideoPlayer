@@ -17,13 +17,11 @@ import java.util.Arrays;
  * Created by wanlipeng on 2019-07-05 16:20
  */
 public class MainActivity extends AppCompatActivity {
-    private Player player;
-    
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        player = new Player(this);
 
         initButton();
     }

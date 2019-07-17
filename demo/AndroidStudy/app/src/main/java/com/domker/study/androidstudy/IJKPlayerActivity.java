@@ -33,7 +33,7 @@ public class IJKPlayerActivity extends AppCompatActivity {
             this.finish();
         }
         ijkPlayer.setListener(new VideoPlayerListener());
-        ijkPlayer.setVideoResource(R.raw.yuminhong);
+        ijkPlayer.setVideoResource(R.raw.bytedance);
 //        ijkPlayer.setVideoPath(getVideoPath());
 
         findViewById(R.id.buttonPlay).setOnClickListener(new View.OnClickListener() {

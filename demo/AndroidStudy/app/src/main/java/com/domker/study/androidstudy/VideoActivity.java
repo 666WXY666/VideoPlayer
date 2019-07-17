@@ -35,7 +35,7 @@ public class VideoActivity extends AppCompatActivity {
         });
 
         videoView = findViewById(R.id.videoView);
-        videoView.setVideoPath(getVideoPath(R.raw.yuminhong));
+        videoView.setVideoPath(getVideoPath(R.raw.bytedance));
     }
 
     private String getVideoPath(int resId) {
