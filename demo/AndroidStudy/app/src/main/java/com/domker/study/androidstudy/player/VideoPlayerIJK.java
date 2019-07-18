@@ -151,7 +151,7 @@ public class VideoPlayerIJK extends FrameLayout {
         ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "mediacodec", 1);
 
         mMediaPlayer = ijkMediaPlayer;
-//        ((IjkMediaPlayer) mMediaPlayer).setSpeed(2f);
+        ((IjkMediaPlayer) mMediaPlayer).setSpeed(3f);
         if (listener != null) {
             mMediaPlayer.setOnPreparedListener(listener);
             mMediaPlayer.setOnInfoListener(listener);

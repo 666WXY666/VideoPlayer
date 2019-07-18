@@ -59,7 +59,7 @@ public class ImageActivity extends AppCompatActivity {
         cropOptions = cropOptions.circleCrop();
         Glide.with(ImageActivity.this)
                 .load(IMAGE_URL)
-//                .apply(cropOptions)
+                .apply(cropOptions)
                 .placeholder(R.drawable.icon_progress_bar)
                 .error(R.drawable.icon_failure)
                 .fallback(R.drawable.ic_launcher_background)

@@ -37,7 +37,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
                     // 自动播放
-                    player.start();
+//                    player.start();
                     player.setLooping(true);
                 }
             });
