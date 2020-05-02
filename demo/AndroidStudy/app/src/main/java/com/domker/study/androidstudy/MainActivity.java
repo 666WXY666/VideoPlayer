@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         open(R.id.button1, VideoActivity.class);
         open(R.id.button3, MediaPlayerActivity.class);
         open(R.id.button4, IJKPlayerActivity.class);
-        open(R.id.button5, MediaRecordActivity.class);
         open(R.id.button6, ImageActivity.class);
         // 检查权限
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {

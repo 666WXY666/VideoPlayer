@@ -18,19 +18,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Camera" />
+        android:text="Camera"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/buttonLoad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="LoadImage" />
+        android:text="LoadImage"
+        android:textAllCaps="false" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="8"
-        tools:srcCompat="@tools:sample/avatars[1]" />
+        android:src="@drawable/ic_background"
+        />
 </LinearLayout>

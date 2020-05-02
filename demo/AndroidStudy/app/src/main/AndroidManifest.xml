@@ -31,7 +31,6 @@
         <activity android:name=".VideoActivity" />
         <activity android:name=".MediaPlayerActivity" />
         <activity android:name=".IJKPlayerActivity" />
-        <activity android:name=".MediaRecordActivity" />
         <activity android:name=".ImageActivity" />
         <provider
             android:name="android.support.v4.content.FileProvider"

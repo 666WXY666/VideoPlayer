@@ -63,7 +63,7 @@ public class ImageActivity extends AppCompatActivity {
                 .placeholder(R.drawable.icon_progress_bar)
                 .error(R.drawable.icon_failure)
                 .fallback(R.drawable.ic_launcher_background)
-//                .thumbnail(Glide.with(this).load(IMAGE_URL2))
+////                .thumbnail(Glide.with(this).load(IMAGE_URL2))
                 .transition(withCrossFade(4000))
                 .into(mImageView);
     }
