@@ -31,6 +31,7 @@ import java.util.TimeZone;
 
 /**
  * @author 12937
+ * VideoPlayer-pro版
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

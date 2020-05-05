@@ -29,6 +29,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+/**
+ * @author 12937
+ * VideoPlayer-基础版
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private VideoView videoView;
