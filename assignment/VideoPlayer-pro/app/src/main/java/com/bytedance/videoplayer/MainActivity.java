@@ -29,6 +29,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+/**
+ * @author 12937
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private VideoView videoView;
@@ -100,6 +103,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(mPermissionsArrays, REQUEST_PERMISSION);
             }
+        }
+
+        Uri uri = getIntent().getData();
+        if (uri != null) {
+            videoPath = uri.getPath();
         }
 
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
