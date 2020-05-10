@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textViewTime;
     private TextView textViewCurrentPosition;
 
-    private String videoPath = "";
+    private String videoUri = "";
     private int playProgress = 0;
     private boolean playFlag = false;
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState != null) {
-            videoPath = savedInstanceState.getString("videoPath");
+            videoUri = savedInstanceState.getString("videoUri");
             playProgress = savedInstanceState.getInt("playProgress");
             playFlag = savedInstanceState.getBoolean("playFlag");
         }
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Uri uri = getIntent().getData();
         if (uri != null) {
-            videoPath = uri.getPath();
+            videoUri = uri.toString();
         }
 
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -160,8 +160,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     RelativeLayout.LayoutParams.MATCH_PARENT);
             layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
             videoView.setLayoutParams(layoutParams);
-            if (!"".equals(videoPath)) {
-                videoView.setVideoPath(videoPath);
+            if (!videoUri.isEmpty()) {
+                videoView.setVideoURI(Uri.parse(videoUri));
             }
         } else if (MainActivity.this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             RelativeLayout relativeLayout = findViewById(R.id.videoPlay);
@@ -176,8 +176,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             layoutParams.setMarginEnd(m);
             relativeLayout.setLayoutParams(layoutParams);
 
-            if (!"".equals(videoPath)) {
-                videoView.setVideoPath(videoPath);
+            if (!videoUri.isEmpty()) {
+                videoView.setVideoURI(Uri.parse(videoUri));
             }
         }
 
@@ -251,9 +251,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (resultCode == Activity.RESULT_OK) {
             Uri uri = data.getData();
             if (uri != null) {
-                videoPath = uri.getPath();
-                videoView.setVideoPath(uri.getPath());
+                videoView.setVideoURI(uri);
+                videoUri = uri.toString();
                 playProgress = 0;
+                playFlag = false;
             }
         }
     }
@@ -319,7 +320,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putString("videoPath", videoPath);
+        savedInstanceState.putString("videoUri", videoUri);
         savedInstanceState.putInt("playProgress", playProgress);
         savedInstanceState.putBoolean("playFlag", playFlag);
         super.onSaveInstanceState(savedInstanceState);
